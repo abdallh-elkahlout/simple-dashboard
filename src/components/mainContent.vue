@@ -363,10 +363,115 @@
           </v-card>
         </v-col>
       </v-row>
+      <v-row class="mt-16">
+        <v-col cols="6">
+          <v-card
+            class="px-5 pb-4"
+            style="border-radius: 7px; overflow: visible"
+          >
+            <v-card-text>
+              <div
+                class="chart"
+                style="
+                  background-color: #fb8c00;
+                  padding: 30px;
+                  border-radius: 4px;
+                  margin-top: -40px;
+                  box-shadow: 0 3px 7px #3c4855;
+                  position: relative;
+                  z-index: 2;
+                "
+              >
+                <v-card-title
+                  style="font-weight: 400; color: white; font-size: 20px"
+                >
+                  Employees Stats
+                </v-card-title>
+                <v-card-text
+                  style="font-weight: 300; color: #fffc; font-size: 17px"
+                  >New employees on 15th September, 2016
+                </v-card-text>
+              </div>
+            </v-card-text>
+            <v-table class="mt-7 px-6" style="color: #0009; font-weight: 400">
+              <thead style="font-size: 20px">
+                <tr>
+                  <th class="text-left">ID</th>
+                  <th class="text-left">Name</th>
+                  <th class="text-left">Salary</th>
+                  <th class="text-left">Country</th>
+                  <th class="text-left">City</th>
+                </tr>
+              </thead>
+              <tbody style="font-size: 18px">
+                <tr v-for="item in employees" :key="item.id">
+                  <td>{{ item.id }}</td>
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.salary }}</td>
+                  <td>{{ item.country }}</td>
+                  <td>{{ item.city }}</td>
+                </tr>
+              </tbody>
+            </v-table>
+          </v-card>
+        </v-col>
+        <v-col cols="6">
+          <v-card
+            class="px-5 pb-4"
+            style="border-radius: 7px; overflow: visible"
+          >
+            <v-card-text>
+              <div
+                class="chart"
+                style="
+                  background-color: #4caf50;
+                  padding: 30px;
+                  border-radius: 4px;
+                  margin-top: -40px;
+                  box-shadow: 0 3px 7px #3c4855;
+                  position: relative;
+                  z-index: 2;
+                  padding: 50px 0px 50px 30px;
+                  color: white;
+                "
+              >
+                <div class="content d-flex">
+                  <v-card-title>Tasks: </v-card-title>
+                  <v-tabs
+                    v-model="tab"
+                    background-color="#4caf50"
+                    color="white"
+                    slider-color="white"
+                    show-arrows
+                    style="color: #fff9"
+                  >
+                    <v-tab v-for="(item, i) in tabs" :key="i">
+                      <v-icon left>{{ item.icon }}</v-icon>
+                      {{ item.label }}
+                    </v-tab>
+                  </v-tabs>
+                </div>
+              </div>
+            </v-card-text>
+            <v-tabs-window v-model="tab">
+              <v-tabs-window-item
+                v-for="item in items"
+                :key="item"
+                :value="item"
+              >
+                <v-card color="basil" flat>
+                  <v-card-text>{{ text }}</v-card-text>
+                </v-card>
+              </v-tabs-window-item>
+            </v-tabs-window>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
   </v-main>
 </template>
 <script setup>
+import { ref } from "vue";
 import { Bar, Line } from "vue-chartjs";
 import {
   Chart,
@@ -484,4 +589,80 @@ const secondLineChartOptions = {
     },
   },
 };
+const employees = ref([
+  {
+    id: 1,
+    name: "Dakota Rice",
+    calories: 159,
+    salary: "$36,738",
+    country: "Niger",
+    city: "Oud-Turnhout",
+  },
+  {
+    id: 2,
+    name: "Minerva Hooper",
+    calories: 237,
+    salary: "$23,789",
+    country: "Curaçao",
+    city: "Sinaai-Waas",
+  },
+  {
+    id: 3,
+    name: "Sage Rodriguez",
+    calories: 262,
+    salary: "$56,142",
+    country: "Netherlands",
+    city: "Baileux",
+  },
+  {
+    id: 4,
+    name: "Philip Chanley",
+    calories: 305,
+    salary: "$38,735",
+    country: "Netherlands",
+    city: "Baileux",
+  },
+  {
+    id: 5,
+    name: "Doris Greene",
+    calories: 356,
+    salary: "$63,542",
+    country: "Netherlands",
+    city: "Baileux",
+  },
+]);
+const tab = ref(0);
+const tabs = [
+  { label: "BUGS", icon: "mdi-bug" },
+  { label: "WEBSITE", icon: "mdi-web" },
+  { label: "SERVER", icon: "mdi-cloud" },
+];
+
+// const bugs = ref([
+//   {
+//     text: 'Sign contract for "What are conference organizers afraid of?"',
+//     done: true,
+//   },
+//   {
+//     text: "Lines From Great Russian Literature? Or E-mails From My Boss?",
+//     done: false,
+//   },
+//   {
+//     text: "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit",
+//     done: false,
+//   },
+//   {
+//     text: "Create 4 Invisible User Experiences you Never Knew About",
+//     done: true,
+//   },
+// ]);
+
+const items = ["Appetizers", "Entrees", "Deserts", "Cocktails"];
+const text =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 </script>
+<style>
+table tbody tr:hover {
+  background-color: #d4d2d2;
+}
+</style>
