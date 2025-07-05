@@ -7,9 +7,9 @@
     >
       <v-icon>mdi-dots-vertical</v-icon>
     </v-app-bar-nav-icon>
-    <v-app-bar-title style="font-size: 23px; font-weight: 300"
-      >Dashbord</v-app-bar-title
-    >
+    <v-app-bar-title style="font-size: 23px; font-weight: 300">
+      Dashbord
+    </v-app-bar-title>
     <v-responsive class="mx-auto mr-3" max-width="150">
       <v-text-field
         hide-details="auto"
@@ -48,7 +48,6 @@
         @click="setActive(index)"
       >
         <v-icon class="mx-2">{{ btn.icon }}</v-icon>
-
         <v-badge
           v-if="index === 1"
           color="red"
@@ -72,7 +71,7 @@ export default {
       btns: [
         { icon: "mdi-view-dashboard", link: "/" },
         { icon: "mdi-bell", link: "/notifications" },
-        { icon: "mdi-account", link: "/account" },
+        { icon: "mdi-account", link: "/profile" },
       ],
     };
   },
@@ -83,6 +82,27 @@ export default {
     setActive(index) {
       this.activeIndex = index;
     },
+    setActiveByRoute() {
+      const idx = this.btns.findIndex((btn) => btn.link === this.$route.path);
+      this.activeIndex = idx !== -1 ? idx : 0;
+    },
+  },
+  mounted() {
+    this.setActiveByRoute();
+  },
+  watch: {
+    "$route.path": function () {
+      this.setActiveByRoute();
+    },
   },
 };
 </script>
+
+<style scoped>
+.active {
+  background-color: #4caf50 !important;
+  color: white !important;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+</style>

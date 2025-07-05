@@ -1,21 +1,20 @@
 <template>
-  <v-app id="inspire">
-    <sideBar />
-    <headerCom app />
-    <mainContent />
-  </v-app>
+  <v-main>
+    <v-container fluid class="pt-16 px-10">
+      <chartsComp />
+      <titlesComp />
+      <tableAndTasks />
+    </v-container>
+  </v-main>
 </template>
 
-<script>
-import headerCom from "@/components/headerCom.vue";
-import sideBar from "@/components/sideBar.vue";
-import mainContent from "@/components/mainContent.vue";
-export default {
-  name: "App",
-  components: {
-    headerCom,
-    sideBar,
-    mainContent,
-  },
-};
+<script setup>
+import chartsComp from "@/components/chartsComp.vue";
+import titlesComp from "@/components/titleComp.vue";
+import tableAndTasks from "@/components/TableAndTasks.vue";
 </script>
+<style>
+table tbody tr:hover {
+  background-color: #d4d2d2;
+}
+</style>

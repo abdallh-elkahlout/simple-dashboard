@@ -1,9 +1,18 @@
 <template>
-  <router-view />
+  <v-app>
+    <sideBar />
+    <headerCom />
+    <router-view />
+    <v-main>
+      <footerSection />
+    </v-main>
+  </v-app>
 </template>
 
-<script>
-export default {};
+<script setup>
+import sideBar from "@/components/sideBar.vue";
+import headerCom from "@/components/headerCom.vue";
+import footerSection from "@/components/footerSection.vue";
 </script>
 
 <style>

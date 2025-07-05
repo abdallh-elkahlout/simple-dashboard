@@ -18,7 +18,7 @@
           :to="item.link"
           :class="[
             'mb-3 py-5 mt-1 text-grey-lighten-2 hover-only rounded',
-            { isActive: activeIndex === index },
+            { isActive: item.link === $route.path },
           ]"
           style="
             display: flex;
@@ -26,7 +26,6 @@
             align-items: center;
             font-size: 18px;
           "
-          @click="setActive(index)"
         >
           <v-icon class="me-5">
             {{ item.icon }}
@@ -44,12 +43,11 @@ export default {
   inject: ["Emitter"],
   data() {
     return {
-      drawer: false,
-      activeIndex: 0,
+      drawer: true,
       tools: [
         { text: "Dashboard", icon: "mdi-view-dashboard", link: "/" },
         { text: "Profile", icon: "mdi-account", link: "/profile" },
-        { text: "Regular Tables", icon: "mdi-table", link: "/tables" },
+        { text: "Regular Tables", icon: "mdi-table", link: "/tables-page" },
         {
           text: "Google Maps",
           icon: "mdi-map-marker-multiple-outline",
@@ -63,11 +61,6 @@ export default {
     this.Emitter.on("toggleDrawer", () => {
       this.drawer = !this.drawer;
     });
-  },
-  methods: {
-    setActive(index) {
-      this.activeIndex = index;
-    },
   },
 };
 </script>
