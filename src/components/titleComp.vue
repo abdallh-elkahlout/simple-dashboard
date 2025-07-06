@@ -19,6 +19,9 @@
                   z-index: 2;
                   width: 100px;
                   height: 100px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
                 "
               >
                 <v-icon>mdi-twitter</v-icon>

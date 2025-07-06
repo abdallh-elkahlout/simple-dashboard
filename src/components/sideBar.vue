@@ -51,9 +51,9 @@ export default {
         {
           text: "Google Maps",
           icon: "mdi-map-marker-multiple-outline",
-          link: "/maps",
+          link: "/maps-page",
         },
-        { text: "Notifications", icon: "mdi-bell", link: "/notifications" },
+        { text: "Notifications", icon: "mdi-bell", link: "/notification-page" },
       ],
     };
   },

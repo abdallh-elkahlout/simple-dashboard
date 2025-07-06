@@ -70,7 +70,7 @@ export default {
       activeIndex: 0,
       btns: [
         { icon: "mdi-view-dashboard", link: "/" },
-        { icon: "mdi-bell", link: "/notifications" },
+        { icon: "mdi-bell", link: "/notification-page" },
         { icon: "mdi-account", link: "/profile" },
       ],
     };
