@@ -1,11 +1,8 @@
 <template>
   <v-main>
-    <v-container
-      fluid
-      style="margin-top: 130px; padding-right: 30px; padding-left: 30px"
-    >
-      <v-row>
-        <v-col cols="8">
+    <v-container fluid style="padding-right: 30px; padding-left: 30px">
+      <v-row style="padding-top: 190px">
+        <v-col cols="12" lg="8" order="2" order-lg="1" class="mt-5">
           <v-card class="px-1" style="border-radius: 7px; overflow: visible">
             <v-card-text>
               <div
@@ -157,7 +154,7 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="12" lg="4" order="1" order-lg="2" class="mt-5">
           <v-card class="px-1" style="border-radius: 7px; overflow: visible">
             <div class="d-flex justify-center align-center mb-8">
               <img

@@ -1,6 +1,6 @@
 <template>
   <v-row class="mt-6">
-    <v-col cols="4">
+    <v-col cols="12" md="6" lg="4" sm="12" class="mt-5">
       <v-card class="px-1" style="border-radius: 7px; overflow: visible">
         <v-card-text>
           <div
@@ -34,7 +34,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="4">
+    <v-col cols="12" md="6" lg="4" sm="12" class="mt-5">
       <v-card class="px-1" style="border-radius: 7px; overflow: visible">
         <v-card-text>
           <div
@@ -68,7 +68,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="4">
+    <v-col cols="12" md="6" lg="4" sm="12" class="mt-5">
       <v-card class="px-1" style="border-radius: 7px; overflow: visible">
         <v-card-text>
           <div

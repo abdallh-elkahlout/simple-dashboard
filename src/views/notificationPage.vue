@@ -2,7 +2,7 @@
   <v-main>
     <v-container fluid class="px-10">
       <v-row class="mt-16">
-        <v-col cols="6">
+        <v-col cols="12" lg="6">
           <v-card class="pa-3">
             <v-card-title
               style="font-size: 23px; font-weight: 400; margin-bottom: 40px"
@@ -60,7 +60,7 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col cols="6">
+        <v-col cols="12" lg="6">
           <v-card class="pa-3">
             <v-card-title
               style="font-size: 23px; font-weight: 400; margin-bottom: 40px"

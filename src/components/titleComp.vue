@@ -1,6 +1,6 @@
 <template>
   <v-row class="mt-15">
-    <v-col cols="3">
+    <v-col cols="12" lg="3" sm="6" md="6" class="mt-3">
       <v-card style="overflow: visible">
         <div style="display: flex; justify-content: space-between">
           <div class="image">
@@ -64,7 +64,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="3">
+    <v-col cols="12" lg="3" sm="6" md="6" class="mt-3">
       <v-card style="overflow: visible">
         <div style="display: flex; justify-content: space-between">
           <div class="image">
@@ -125,7 +125,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="3">
+    <v-col cols="12" lg="3" sm="6" md="6" class="mt-3">
       <v-card style="overflow: visible">
         <div style="display: flex; justify-content: space-between">
           <div class="image">
@@ -186,7 +186,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="3">
+    <v-col cols="12" lg="3" sm="6" md="6" class="mt-3">
       <v-card style="overflow: visible">
         <div style="display: flex; justify-content: space-between">
           <div class="image">

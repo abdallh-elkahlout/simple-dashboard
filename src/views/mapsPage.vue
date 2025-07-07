@@ -47,7 +47,7 @@
         </v-col>
       </v-row>
       <v-row class="mt-16">
-        <v-col cols="6">
+        <v-col cols="12" lg="6" class="mt-8">
           <v-card
             class="px-5 pb-4"
             style="border-radius: 7px; overflow: visible"
@@ -90,7 +90,7 @@
             </div>
           </v-card>
         </v-col>
-        <v-col cols="6">
+        <v-col cols="12" lg="6" class="mt-8">
           <v-card
             class="px-5 pb-4"
             style="border-radius: 7px; overflow: visible"

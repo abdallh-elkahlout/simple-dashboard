@@ -1,6 +1,6 @@
 <template>
   <v-row class="mt-16">
-    <v-col cols="6">
+    <v-col cols="12" lg="6" class="mt-3">
       <v-card class="px-5 pb-4" style="border-radius: 7px; overflow: visible">
         <v-card-text>
           <div
@@ -47,7 +47,7 @@
         </v-table>
       </v-card>
     </v-col>
-    <v-col cols="6">
+    <v-col cols="12" lg="6" class="mt-5">
       <v-card class="px-5 pb-4" style="border-radius: 7px; overflow: visible">
         <v-card-text>
           <div
@@ -64,7 +64,7 @@
             "
           >
             <div class="content d-flex">
-              <v-card-title>Tasks: </v-card-title>
+              <v-card-title class="cardTitle">Tasks: </v-card-title>
               <v-tabs
                 v-model="tab"
                 background-color="#4caf50"
@@ -358,3 +358,11 @@ const server = ref([
   },
 ]);
 </script>
+<style>
+@media (max-width: 730px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+</style>
