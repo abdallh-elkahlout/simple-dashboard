@@ -69,7 +69,7 @@
             <v-card-text>
               <v-list>
                 <v-list-item
-                  v-for="(list, i) in lists"
+                  v-for="(list2, i) in lists2"
                   :key="i"
                   style="position: relative"
                 >
@@ -83,7 +83,7 @@
                       font-weight: 300;
                       white-space: pre-line;
                     "
-                    >{{ list }}</v-list-item-title
+                    >{{ list2 }}</v-list-item-title
                   >
                   <v-btn
                     icon
@@ -96,7 +96,7 @@
                       right: 12px;
                       z-index: 2;
                     "
-                    @click="lists.splice(i, 1)"
+                    @click="lists2.splice(i, 1)"
                   >
                     <v-icon color="white">mdi-close</v-icon>
                   </v-btn>
@@ -112,6 +112,11 @@
 <script setup>
 import { ref } from "vue";
 const lists = ref([
+  "This is a notification with close button.",
+  "This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.",
+  "You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.",
+]);
+const lists2 = ref([
   "This is a notification with close button.",
   "This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.",
   "You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.",
